@@ -1,0 +1,21 @@
+.footer-custom {
+  background-color: #141E61;
+  color: #EEEEEE;
+  border-top: 3px solid #787A91;
+  padding: 2rem;
+}
+
+.footer-custom a {
+  text-decoration: none;
+  color: #EEEEEE;
+}
+
+.footer-custom a:hover {
+  color: #EEEEEE;
+}
+
+.footer-custom .icon-social {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Footer.css.map */

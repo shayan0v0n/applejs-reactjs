@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.footer-custom {
+    background-color: $secondary_color;
+    color: $fourth_color;
+    border-top: 3px solid $third_color;
+    padding: 2rem;
+        a {
+            text-decoration: none;
+            color: $fourth_color;
+                &:hover {
+                        color: $fourth_color;
+                }
+        }
+    .icon-social {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}

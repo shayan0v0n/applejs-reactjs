@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.navbar-custom {
+    background-color: $secondary_color;
+    color: $fourth_color ;
+    border-bottom: 3px solid $third_color;
+}
+
+.basic-nav-dropdown div {
+    background-color: $secondary_color ;
+    text-align: center ;
+    a {
+        color: $fourth_color ;
+            &:hover {
+                background-color: $secondary_color ;
+            }
+    }
+}

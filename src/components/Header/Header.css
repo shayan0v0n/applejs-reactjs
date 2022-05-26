@@ -1,0 +1,19 @@
+.navbar-custom {
+  background-color: #141E61;
+  color: #EEEEEE;
+  border-bottom: 3px solid #787A91;
+}
+
+.basic-nav-dropdown div {
+  background-color: #141E61;
+  text-align: center;
+}
+
+.basic-nav-dropdown div a {
+  color: #EEEEEE;
+}
+
+.basic-nav-dropdown div a:hover {
+  background-color: #141E61;
+}
+/*# sourceMappingURL=Header.css.map */

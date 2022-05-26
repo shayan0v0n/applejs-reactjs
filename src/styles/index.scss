@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+@font-face {
+    font-family: 'vazir';
+    src: url('../../public/assets/fonts/Vazir-Regular-FD.woff');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "vazir" !important;
+    background-color: $third_color;
+}
