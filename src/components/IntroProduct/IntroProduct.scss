@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+
+.airpod-banner-custom {
+    background: linear-gradient(125deg, $primary_color 10%, $third_color);
+    padding: 2rem;
+    margin: 1.5rem;
+    color: $fifth_color;
+    border-radius: 10px;
+}

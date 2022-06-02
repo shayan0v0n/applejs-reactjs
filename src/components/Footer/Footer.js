@@ -36,8 +36,8 @@ const Footer = props => {
                         </div>
                     </Col>
                     <Col sm="12" md="4">
-                        <Image src="/assets/imgs/security.png" fluid />
-                        <Image src="/assets/imgs/security2.svg" fluid />
+                        <Image src="/assets/imgs/security.png" />
+                        <Image src="/assets/imgs/security2.svg" />
                     </Col>
                 </Row>
             </Container>

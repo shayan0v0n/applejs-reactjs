@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.product-card-custom {
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    cursor: pointer;
+    background-color: $third_color !important;
+    color: $fifth_color;
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            background-color: $secondary_color !important;
+            color: $fifth_color;
+        }
+}

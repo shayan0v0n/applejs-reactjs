@@ -11,8 +11,18 @@
     text-align: center ;
     a {
         color: $fourth_color ;
-            &:hover {
-                background-color: $secondary_color ;
-            }
+        &:hover {
+            background-color: $secondary_color ;
+            color: $fourth_color ;
+        }
     }
+}
+
+.shopping-cart-custom {
+    background-color: $fourth_color;
+    padding: .3rem 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: black !important;
 }

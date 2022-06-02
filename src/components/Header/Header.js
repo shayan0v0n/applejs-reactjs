@@ -16,7 +16,7 @@ const Header = props => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
-                        <LinkContainer to="/account">
+                        <LinkContainer to="/account" className="shopping-cart-custom">
                             <Nav.Link>حساب کاربری</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/">
@@ -33,14 +33,23 @@ const Header = props => {
                         onClick={() => navigate('/shop')}
                         to='/shop'
                         >
-                        <LinkContainer to="/shop/mobile">
-                            <NavDropdown.Item onClick={stopClickPropagation}>موبایل</NavDropdown.Item>
+                        <LinkContainer to="/shop/iphone">
+                            <NavDropdown.Item onClick={stopClickPropagation}>iphone</NavDropdown.Item>
                         </LinkContainer>
-                        <LinkContainer to="/shop/laptop">
-                            <NavDropdown.Item onClick={stopClickPropagation}>لب تاب</NavDropdown.Item>
+                        <LinkContainer to="/shop/mac">
+                            <NavDropdown.Item onClick={stopClickPropagation}>mac</NavDropdown.Item>
                         </LinkContainer>
-                        <LinkContainer to="/shop/watch">
-                            <NavDropdown.Item onClick={stopClickPropagation}>ساعت</NavDropdown.Item>
+                        <LinkContainer to="/shop/ipad">
+                            <NavDropdown.Item onClick={stopClickPropagation}>ipad</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/shop/appleWatch">
+                            <NavDropdown.Item onClick={stopClickPropagation}>apple watch</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/shop/airpod">
+                            <NavDropdown.Item onClick={stopClickPropagation}>airpod</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/shop/airtag">
+                            <NavDropdown.Item onClick={stopClickPropagation}>airtag</NavDropdown.Item>
                         </LinkContainer>
                         </NavDropdown>
                         <LinkContainer to="/about-us">
@@ -48,8 +57,10 @@ const Header = props => {
                         </LinkContainer>
                     </Nav>
                     </Navbar.Collapse>
-                        <LinkContainer to="/">
-                            <Navbar.Brand>AppleJS</Navbar.Brand>
+                        <LinkContainer to="/cart">
+                            <div className="shopping-cart-custom">
+                                <i className="fa fa-shopping-cart"></i>
+                            </div>
                         </LinkContainer>
                 </Container>
             </Navbar>
