@@ -10,7 +10,7 @@ const CategoryCard = props => {
   return (
     <>
         {cardData ? (
-          <Card className="category-card-custom" onClick={() => {navigate(`/shop/${cardData.name}`)}}>
+          <Card className="category-card-custom animate__animated animate__fadeIn" onClick={() => {navigate(`/shop/${cardData.name}`)}}>
             <Card.Img src={`assets/imgs/${cardData.name}.png`} fluid className="w-50" />
             <Card.Title className="text-center pt-2">{cardData.name}</Card.Title>
           </Card>

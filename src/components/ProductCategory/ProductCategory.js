@@ -5,6 +5,7 @@ import { Carousel, Container, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { categoriesAction } from "../../actions/Actions"
 import Loading from '../loading/Loading'
+import ShowProducts from '../ShowProducts/ShowProducts'
 
 const ProductCategory = () => {
     const dispatch = useDispatch();

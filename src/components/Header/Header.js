@@ -1,24 +1,36 @@
 import React, { useState } from 'react';
-import './Header.scss';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useNavigate } from 'react-router-dom'
+import Login from '../Login/Login';
+import './Header.scss';
 
 const Header = props => {
     const [showDropdown, setShowDropdown] = useState(false)
     const navigate = useNavigate();
     const stopClickPropagation = event => event.stopPropagation();
+    const [show, setShow] = useState(false);
+    const handleShow = () => {setShow(true)};
+    const handleOnShow = () => {setShow(false)};
+    const userInfoExist = localStorage.getItem("userInfo")
 
     return (
         <header>
+            <Login show={show} handleClose={handleOnShow} />
             <Navbar expand="md" variant="dark" className="navbar-custom">
                 <Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
+                        {!userInfoExist ? (
+                        <LinkContainer to="/" className="shopping-cart-custom">
+                            <Nav.Link onClick={handleShow}>ثبت نام</Nav.Link>
+                        </LinkContainer>
+                        ) : (
                         <LinkContainer to="/account" className="shopping-cart-custom">
                             <Nav.Link>حساب کاربری</Nav.Link>
                         </LinkContainer>
+                        )}
                         <LinkContainer to="/">
                             <Nav.Link>صفحه اصلی</Nav.Link>
                         </LinkContainer>
@@ -57,11 +69,9 @@ const Header = props => {
                         </LinkContainer>
                     </Nav>
                     </Navbar.Collapse>
-                        <LinkContainer to="/cart">
-                            <div className="shopping-cart-custom">
-                                <i className="fa fa-shopping-cart"></i>
-                            </div>
-                        </LinkContainer>
+                    <LinkContainer to="/">
+                        <Navbar.Brand>Applejs</Navbar.Brand>
+                    </LinkContainer>
                 </Container>
             </Navbar>
         </header>

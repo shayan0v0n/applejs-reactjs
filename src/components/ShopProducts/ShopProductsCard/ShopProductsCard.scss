@@ -1,0 +1,21 @@
+@import "../../../styles/variables.scss";
+
+.allproducts-card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        transform: translateY(-10px);
+    }
+    img {
+        border-left: 1px solid rgba(0, 0, 0, 0.336);
+        padding-left: 1rem;
+    }
+    .text-place {
+        display: flex !important;
+        justify-items: end !important;
+        align-items: center !important;
+        padding: 1rem;
+    }
+}

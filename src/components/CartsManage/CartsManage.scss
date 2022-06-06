@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.cartAccount-header {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background: linear-gradient(125deg, $secondary_color 10%, $third_color);
+    color: $fifth_color;
+}

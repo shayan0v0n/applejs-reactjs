@@ -23,3 +23,16 @@ export const SingleCategoryReducer = (state = {products: []}, action) => {
             return state
     }
 }
+
+export const allProductsReducer = (state = {products: []}, action) => {
+    switch(action.type) {
+        case "PRODUCTS_REQ_ERR":
+            return { loading: false, error: true, products: [] }
+        case "PRODUCTS_REQ_LOAD":
+            return { loading: true, error: false, products: [] }
+        case "PRODUCTS_REQ_SUCCESS":
+            return { loading: false, error: false, products: action.payload }
+        default:
+            return state
+    }
+}

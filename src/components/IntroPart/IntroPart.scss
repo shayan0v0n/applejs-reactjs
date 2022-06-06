@@ -4,4 +4,15 @@
     background-color: $primary_color;
     color: $fourth_color;
     padding: 2rem;
+    border-top: 3px solid $third_color;
+    border-bottom: 3px solid $third_color;
+}
+
+.introPart-footer {
+    background-color: $secondary_color;
+    color: $fourth_color;
+    .introFooter-card {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
 }

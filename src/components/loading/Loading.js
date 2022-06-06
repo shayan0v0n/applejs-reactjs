@@ -3,7 +3,7 @@ import { Card, Placeholder } from 'react-bootstrap'
 
 const Loading = () => {
   return (
-        <Card>
+        <Card className='m-1'>
         <Card.Body>
         <Placeholder as={Card.Title} animation="glow" className="text-center">
         <Placeholder.Button variant="primary" xs={6} />

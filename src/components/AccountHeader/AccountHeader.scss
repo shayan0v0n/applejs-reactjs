@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+
+.account-nav {
+    background: $third_color;
+    a {
+        color: $fifth_color !important;
+    }
+}
