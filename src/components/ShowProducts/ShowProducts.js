@@ -11,8 +11,11 @@ const ShowProducts = props => {
                 cart: [...prevStorage.cart, currentProduct]
             };
             localStorage.setItem("userInfo", JSON.stringify(newStorage));
+            props.handleClose()
+            props.addToCartSuccessOpen()
         }else {
-            alert("Please Login First!")
+            props.handleClose()
+            props.loginErrorModalOpen()
         }
     }
 

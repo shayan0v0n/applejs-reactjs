@@ -5,10 +5,17 @@ import { singleCategoryAction } from '../../actions/Actions';
 import Loading from '../../components/loading/Loading';
 import ShowProducts from '../../components/ShowProducts/ShowProducts'
 import ProductsCard from '../../components/ProductsCard/ProductsCard';
+import CustomModal from '../CustomModal/CustomModal';
 
 const Products = props => {
     const [show, setShow] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
+    const [loginErrorModal, setLoginErrorModal] = useState(false);
+    const [addToCartSuccess, setAddToCartSuccess] = useState(false)
+    const addToCartSuccessClose = () => setAddToCartSuccess(false)
+    const addToCartSuccessOpen = () => setAddToCartSuccess(true)
+    const loginErrorModalClose = () => setLoginErrorModal(false)
+    const loginErrorModalOpen = () => setLoginErrorModal(true)
     const handleClose = () => setShow(false);
     const handleShow = (current) => {
         setShow(true);
@@ -66,7 +73,19 @@ const Products = props => {
 
   return (
     <Container>
-    <ShowProducts show={show} handleClose={handleClose} currentProduct={currentProduct} />
+    <ShowProducts show={show} handleClose={handleClose} currentProduct={currentProduct} addToCartSuccessOpen={addToCartSuccessOpen} loginErrorModalOpen={loginErrorModalOpen} />
+    <CustomModal
+         show={loginErrorModal}
+         closeHandler={loginErrorModalClose}
+         image="undraw_secure_login_pdn4"
+         title="لطفا اول ثبت نام کنید"
+         extraText="قبل این که محصول را به سبد خرید اضافه کنید، ثبت نام کنید" />
+    <CustomModal
+    show={addToCartSuccess}
+    closeHandler={addToCartSuccessClose}
+    image="undraw_add_files_re_v09g"
+    title="محصول شما اضافه شد"
+    extraText="محصول شما با موفقیت به سبد خرید اضافه شد" />
     <Nav justify variant="tabs" onSelect={handleSelect} defaultActiveKey="allProduct">
         <Nav.Item>
             <Nav.Link eventKey="saleProduct">محصولات حراج</Nav.Link>

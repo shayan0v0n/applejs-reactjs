@@ -5,10 +5,17 @@ import './ShopProducts.scss'
 import ShopProductsCard from './ShopProductsCard/ShopProductsCard'
 import Loading from '../loading/Loading'
 import ShowProducts from '../../components/ShowProducts/ShowProducts'
+import CustomModal from '../CustomModal/CustomModal'
 
 const ShopProducts = props => {
     const [show, setShow] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
+    const [loginErrorModal, setLoginErrorModal] = useState(false);
+    const [addToCartSuccess, setAddToCartSuccess] = useState(false)
+    const addToCartSuccessClose = () => setAddToCartSuccess(false)
+    const addToCartSuccessOpen = () => setAddToCartSuccess(true)
+    const loginErrorModalClose = () => setLoginErrorModal(false)
+    const loginErrorModalOpen = () => setLoginErrorModal(true)
     const handleClose = () => setShow(false);
     const handleShow = (current) => {
         setShow(true);
@@ -34,10 +41,22 @@ const ShopProducts = props => {
 
     return (
     <div>
-        <ShowProducts show={show} handleClose={handleClose} currentProduct={currentProduct} />
+        <ShowProducts show={show} handleClose={handleClose} loginErrorModalOpen={loginErrorModalOpen} addToCartSuccessOpen={addToCartSuccessOpen} currentProduct={currentProduct} />
+        <CustomModal
+         show={loginErrorModal}
+         closeHandler={loginErrorModalClose}
+         image="undraw_secure_login_pdn4"
+         title="لطفا اول ثبت نام کنید"
+         extraText="قبل این که محصول را به سبد خرید اضافه کنید، ثبت نام کنید" />
+        <CustomModal
+         show={addToCartSuccess}
+         closeHandler={addToCartSuccessClose}
+         image="undraw_add_files_re_v09g"
+         title="محصول شما اضافه شد"
+         extraText="محصول شما با موفقیت به سبد خرید اضافه شد" />
         {!allProducts.loading ? (
             allProductsData.map(item => (
-                <ShopProductsCard cardData={item} handleShow={handleShow} />
+                <ShopProductsCard key={item.id} cardData={item} handleShow={handleShow} />
             ))
         ) : (
             <>
