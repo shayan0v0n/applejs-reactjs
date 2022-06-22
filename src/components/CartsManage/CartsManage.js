@@ -5,9 +5,21 @@ import './CartsManage.scss';
 const CartAccountHeader = () => {
     const prevStorage = JSON.parse( localStorage.getItem("userInfo"));
     let cartCount = prevStorage.cart.length;
-    let cartPrices = prevStorage.cart.reduce((totalPrice, prevPrice) => totalPrice + prevPrice.price, 0);
+    let cartPrices = prevStorage.cart.reduce((totalPrice, prevPrice) => {
+        const splitedPrice = prevPrice.price.split(',');
+        const joinedPrice = splitedPrice.join('');
+        const parseIntPrice = Number(joinedPrice);
+        console.log(parseIntPrice)
+        return totalPrice + parseIntPrice
+    }, 0);
     let approvedCartCount = prevStorage.approvedCart.length;
-    let approvedCartPrices = prevStorage.approvedCart.reduce((totalPrice, prevPrice) => totalPrice + prevPrice.price, 0);
+    let approvedCartPrices = prevStorage.approvedCart.reduce((totalPrice, prevPrice) => {
+        const splitedPrice = prevPrice.price.split(',');
+        const joinedPrice = splitedPrice.join('');
+        const parseIntPrice = Number(joinedPrice);
+        console.log(parseIntPrice)
+        return totalPrice + parseIntPrice
+    }, 0);
 
     return (
         <div className="cartAccount-header">
