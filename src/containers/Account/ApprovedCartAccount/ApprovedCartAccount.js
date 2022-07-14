@@ -17,13 +17,23 @@ const ApprovedCartAccount = () => {
     <Container>
       <ShowProducts show={show} handleClose={handleClose} currentProduct={currentProducts} accountToken={true} />
       <CartsManage />
-      <Row>
-        {prevStorage.approvedCart.map(item => (
-          <Col sm="12" md="4">
-            <ApprovedCartAccountCards cardData={item} handleShow={handleShow} />
-          </Col>
-        ))}
-      </Row>
+      {prevStorage.approvedCart[0] ? (
+        <>
+            <Row>
+              {prevStorage.approvedCart.map(item => (
+                <Col sm="12" md="4">
+                  <ApprovedCartAccountCards cardData={item} handleShow={handleShow} />
+                </Col>
+              ))}
+            </Row>
+        </>
+      ) : (
+        <div className='text-center contianer m-5'>
+          <h2>سفارش داده شده</h2>
+          <hr />
+          <span>برای اضافه کردن محصول به سفارش داده شده ها لطفا محصول خریداری فرمایید</span>
+        </div>
+      )}
     </Container>
   )
 }

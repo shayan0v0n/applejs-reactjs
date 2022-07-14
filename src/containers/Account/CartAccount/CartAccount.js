@@ -44,14 +44,24 @@ const CartAccount = () => {
       <ShowProducts show={show} handleClose={handleClose} currentProduct={currentProducts} accountToken={true} />
       <CheckoutModal show={checkoutSHow} handleClose={handleCheckoutClose} deleteProduct={deleteProduct} checkoutHandler={checkoutHandler} />
       <CartsManage />
-      <Button className="btn-success checkoutButton w-100" onClick={() => handleCheckoutOpen()}>تسویه حساب</Button>
-      <Row>
-        {prevStorage.cart.map(item => (
-          <Col sm="12" md="4">
-            <CartAccountCard cardData={item} handleShow={handleShow} deleteProduct={deleteProduct} />
-          </Col>
-        ))}
-      </Row>
+      {prevStorage.cart[0] ? (
+        <>
+            <Button className="btn-success checkoutButton w-100" onClick={() => handleCheckoutOpen()}>تسویه حساب</Button>
+            <Row>
+              {prevStorage.cart.map(item => (
+                <Col sm="12" md="4">
+                  <CartAccountCard cardData={item} handleShow={handleShow} deleteProduct={deleteProduct} />
+                </Col>
+              ))}
+            </Row>
+        </>
+      ) : (
+        <div className='text-center contianer m-5'>
+          <h2>سبد خرید</h2>
+          <hr />
+          <span>برای اضافه کردن محصول به سبد خرید لطفا به فروشاه بروید</span>
+        </div>
+      )}
     </Container>
   )
 }
